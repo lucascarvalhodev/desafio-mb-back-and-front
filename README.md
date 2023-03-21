@@ -5,7 +5,7 @@
 1. Clonar repositório:
 
 ```sh
-git clone https://github.com/lucascarvalhodev/desafio-frontend.git
+git clone https://github.com/lucascarvalhodev/desafio-mb-back-and-front.git
 ```
 
 2. Instalar dependências.
