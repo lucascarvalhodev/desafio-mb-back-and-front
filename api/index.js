@@ -22,12 +22,6 @@ app.get('/', function (req, res) {
   res.json({ message: 'Go to page /registration' })
 })
 
-const pathOfViews = path.resolve('./dist')
-app.use(express.static(pathOfViews))
-app.set('views', pathOfViews)
-app.set('view engine', 'html')
-app.engine('html', renderFile)
-
 app.get('/registration', function (req, res) {
   res.render('./index.html')
 })
@@ -74,6 +68,12 @@ app.post('/registration', async function (req, res) {
     })
   }
 })
+
+const pathOfViews = path.resolve('./dist')
+app.use(express.static(pathOfViews))
+app.set('views', pathOfViews)
+app.set('view engine', 'html')
+app.engine('html', renderFile)
 
 app.listen(PORT, HOST, () => {
   console.log(`Server started on: ${HOST}:${PORT}`)
