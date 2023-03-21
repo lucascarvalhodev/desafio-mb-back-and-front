@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import { renderFile } from 'ejs'
 import * as path from 'path'
-import { object, string, date } from 'yup'
+import { object, string, date, number } from 'yup'
 
 const HOST = '127.0.0.1'
 const PORT = 3000
@@ -17,6 +17,10 @@ app.use(
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+
+app.get('/', function (req, res) {
+  res.json({ message: 'Go to page /registration' })
+})
 
 const pathOfViews = path.resolve('./dist')
 app.use(express.static(pathOfViews))
@@ -38,16 +42,16 @@ app.post('/registration', async function (req, res) {
 
     let schemaPF = object({
       name: string().required(),
-      document: string().required().min(11).max(11),
+      document: number().required().min(11).max(11),
       birthDate: date().required(),
-      phoneNumber: string().required().min(10).max(11)
+      phoneNumber: number().required().min(10).max(11)
     })
 
     let schemaPJ = object({
       corporateName: string().required(),
-      document: string().required().min(14).max(14),
+      document: number().required().min(14).max(14),
       openingDate: date().required(),
-      phoneNumber: string().required().min(10).max(11)
+      phoneNumber: number().required().min(10).max(11)
     })
 
     await schema.validate(req.body)

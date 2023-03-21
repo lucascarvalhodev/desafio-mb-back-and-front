@@ -63,7 +63,7 @@
       </div>
       <div class="input-box">
         <label class="label" >CPF</label>
-        <input class="input" v-model="state.document" maxlength="11"  />
+        <input class="input" type="number" v-model="state.document" maxlength="11" />
       </div>
       <div class="input-box">
         <label class="label" >Data de nascimento</label>
@@ -71,7 +71,7 @@
       </div>
       <div class="input-box">
         <label class="label" >Telefone</label>
-        <input class="input" v-model="state.phoneNumber" maxlength="11" />
+        <input class="input" type="number" v-model="state.phoneNumber" maxlength="11" />
       </div>
     </div>
     <div class="box-errors mb-10" v-if="errors.length != 0">
