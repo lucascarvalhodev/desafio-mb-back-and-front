@@ -1,4 +1,4 @@
-# desafio-mb-front
+# desafio-mb
 
 ### Instalação
 
