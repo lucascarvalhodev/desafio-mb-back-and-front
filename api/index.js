@@ -36,16 +36,32 @@ app.post('/registration', async function (req, res) {
 
     let schemaPF = object({
       name: string().required(),
-      document: string().required().min(11).max(11),
+      document: string()
+        .matches(/^[0-9]+$/, 'document use only numbers')
+        .required()
+        .min(11)
+        .max(11),
       birthDate: date().required(),
-      phoneNumber: string().required().min(10).max(11)
+      phoneNumber: string()
+        .matches(/^[0-9]+$/, 'phoneNumber use only numbers')
+        .required()
+        .min(10)
+        .max(11)
     })
 
     let schemaPJ = object({
       corporateName: string().required(),
-      document: string().required().min(14).max(14),
+      document: string()
+        .matches(/^[0-9]+$/, 'document use only numbers')
+        .required()
+        .min(14)
+        .max(14),
       openingDate: date().required(),
-      phoneNumber: string().required().min(10).max(11)
+      phoneNumber: string()
+        .matches(/^[0-9]+$/, 'phoneNumber use only numbers')
+        .required()
+        .min(10)
+        .max(11)
     })
 
     await schema.validate(req.body)
