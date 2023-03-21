@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import { renderFile } from 'ejs'
 import * as path from 'path'
-import { object, string, date, number } from 'yup'
+import { object, string, date } from 'yup'
 
 const HOST = '127.0.0.1'
 const PORT = 3000
@@ -42,16 +42,16 @@ app.post('/registration', async function (req, res) {
 
     let schemaPF = object({
       name: string().required(),
-      document: number().required().min(11).max(11),
+      document: string().required().min(11).max(11),
       birthDate: date().required(),
-      phoneNumber: number().required().min(10).max(11)
+      phoneNumber: string().required().min(10).max(11)
     })
 
     let schemaPJ = object({
       corporateName: string().required(),
-      document: number().required().min(14).max(14),
+      document: string().required().min(14).max(14),
       openingDate: date().required(),
-      phoneNumber: number().required().min(10).max(11)
+      phoneNumber: string().required().min(10).max(11)
     })
 
     await schema.validate(req.body)
