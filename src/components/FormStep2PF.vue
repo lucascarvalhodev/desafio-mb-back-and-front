@@ -33,9 +33,9 @@
     async function next() {
       let schema = object({
         name: string().required(),
-        document: string().required().min(11).max(11),
+        document: string().matches(/^[0-9]+$/, 'document use only numbers').required().min(11).max(11),
         birthDate: date().required(),
-        phoneNumber: string().required().min(10).max(11)
+        phoneNumber: string().matches(/^[0-9]+$/, 'phoneNumber use only numbers').required().min(10).max(11)
       });
 
       try {
@@ -63,7 +63,7 @@
       </div>
       <div class="input-box">
         <label class="label" >CPF</label>
-        <input class="input" type="number" v-model="state.document" maxlength="11" />
+        <input class="input" v-model="state.document" maxlength="11" />
       </div>
       <div class="input-box">
         <label class="label" >Data de nascimento</label>
@@ -71,7 +71,7 @@
       </div>
       <div class="input-box">
         <label class="label" >Telefone</label>
-        <input class="input" type="number" v-model="state.phoneNumber" maxlength="11" />
+        <input class="input" v-model="state.phoneNumber" maxlength="11" />
       </div>
     </div>
     <div class="box-errors mb-10" v-if="errors.length != 0">
