@@ -34,4 +34,4 @@ caso faça alteração é necessario buildar novamente o projeto antes de rodar 
 npm run build
 ```
 
-ele ira atualizar a pasta dist com a nova compilação onde a mesma sera usada pelo express
+ele irá atualizar a pasta dist com a nova compilação onde a mesma será usada pelo express
