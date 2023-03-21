@@ -1,35 +1,37 @@
 # desafio-mb-front
 
-This template should help get you started developing with Vue 3 in Vite.
+### Instalação
 
-## Recommended IDE Setup
+1. Clonar repositório:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+```sh
+git clone https://github.com/lucascarvalhodev/desafio-frontend.git
+```
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+2. Instalar dependências.
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+3. rode o projeto.
+
+```sh
+npm start
+```
+
+### Observações
+
+você pode rodar o projeto vue usando
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+caso faça alteração é necessario buildar novamente o projeto antes de rodar o comando 'npm start' para isso rode o comando
 
 ```sh
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+ele ira atualizar a pasta dist com a nova compilação onde a mesma sera usada pelo express
